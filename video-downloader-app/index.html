@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video Downloader App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+      transition: box-shadow 0.3s ease;
+    }
+    button {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #2563eb; /* Tailwind blue-600 */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-semibold text-blue-600">Video Downloader</h1>
+      <p class="text-gray-600 hidden sm:block">Download videos easily and quickly</p>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-6 py-16 flex flex-col items-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6 text-center">Download Your Favorite Videos</h2>
+    <p class="text-gray-600 mb-10 max-w-xl text-center">Paste the video URL below and click download to save your videos instantly.</p>
+    <form class="w-full max-w-xl flex flex-col sm:flex-row gap-4" onsubmit="event.preventDefault(); alert('Download started!');">
+      <input
+        type="url"
+        placeholder="Enter video URL here"
+        required
+        class="flex-grow px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500"
+        aria-label="Video URL"
+      />
+      <button
+        type="submit"
+        class="bg-blue-500 text-white px-6 py-3 rounded-md shadow-md flex items-center justify-center"
+        aria-label="Download video"
+      >
+        <i class="fas fa-download mr-2"></i> Download
+      </button>
+    </form>
+
+    <section class="mt-16 w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+        <i class="fas fa-bolt text-blue-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Fast Downloads</h3>
+        <p class="text-gray-600 text-sm">Get your videos downloaded in seconds with our optimized servers.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+        <i class="fas fa-mobile-alt text-blue-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Mobile Friendly</h3>
+        <p class="text-gray-600 text-sm">Download videos directly to your phone or tablet with ease.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+        <i class="fas fa-lock text-blue-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Secure & Private</h3>
+        <p class="text-gray-600 text-sm">Your data is safe with us. We respect your privacy.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+        <i class="fas fa-sync-alt text-blue-500 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Multiple Formats</h3>
+        <p class="text-gray-600 text-sm">Choose from various video formats and qualities.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white shadow-inner py-6 mt-auto">
+    <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+      &copy; 2024 Video Downloader App. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
